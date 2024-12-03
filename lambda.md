@@ -14,3 +14,34 @@ Expressions of the λ-calculus are called λ-terms. They have one of three forms
 2. An application, ap(M1 ; M2), of λ-term M1 to another λ-term M2.
 3. An abstraction, λ(x.M ), of a variable x within the λ-term M
 
+# Currying and Uncurrying Examples
+
+```lambda
+# Curried Forms
+λx := e
+λx := (λy := e)
+λx := (λy := (λz := e))
+λx := (λy := (λz := (λw := e)))
+λx := (λy := (λz := (λw := (λv := e))))
+
+# Uncurried Forms
+λx := e
+λx y := e
+λx y z := e
+λx y z w := e
+λx y z w v := e
+
+# Curried Forms examples
+λx. x
+λx. (λy. x + y)
+λx. (λy. (λz. x * y * z))
+λx. (λy. (λz. (λw. x + y - z * w)))
+λx. (λy. (λz. (λw. (λv. x + y - z * w / v))))
+
+# Uncurried Forms examples
+λx. x
+λx y. x + y
+λx y z. x * y * z
+λx y z w. x + y - z * w
+λx y z w v. x + y - z * w / v
+```
