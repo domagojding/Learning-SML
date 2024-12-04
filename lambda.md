@@ -45,3 +45,22 @@ Expressions of the λ-calculus are called λ-terms. They have one of three forms
 λx y z w. x + y - z * w
 λx y z w v. x + y - z * w / v
 ```
+
+```
+Outer Function: λfunc.λarg.(func arg)
+-------------------------------------------------
+| Bound Variable: func                           |
+| Body Expression:                               |
+|   Inner Function: λarg.(func arg)              |
+|   ------------------------------------------   |
+|   | Bound Variable: arg                      | |
+|   | Body Expression:                         | |
+|   |   Function Application: (func arg)       | |
+|   |   ------------------------------------   | |
+|   |   | Function Expression: func          | | |
+|   |   | Argument Expression: arg           | | |
+|   |   ------------------------------------   | |
+|   ------------------------------------------   |
+-------------------------------------------------
+```
+
